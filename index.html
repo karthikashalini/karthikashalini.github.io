@@ -17,8 +17,6 @@
       --chip:rgba(255,255,255,.08);
       --accent:#7aa2ff;
       --accent2:#9d7aff;
-      --ok:#66d9a8;
-      --warn:#ffd479;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -28,7 +26,7 @@
       background:
         radial-gradient(1200px 800px at 10% 10%, rgba(122,162,255,.18), transparent 55%),
         radial-gradient(900px 700px at 85% 15%, rgba(157,122,255,.15), transparent 55%),
-        radial-gradient(900px 600px at 45% 95%, rgba(102,217,168,.08), transparent 55%),
+        radial-gradient(900px 600px at 45% 95%, rgba(122,162,255,.08), transparent 55%),
         var(--bg);
       color:var(--text);
       line-height:1.55;
@@ -46,17 +44,18 @@
       background: rgba(11,16,32,.74);
     }
 
-    /* ✅ CHANGED: Make name elegant, not bold */
+    /* Elegant (not bold) */
     .brand{
-      font-weight:600;               /* was 900 */
+      font-weight:400;
       letter-spacing:.18px;
       display:flex; align-items:center; gap:10px;
-      color: rgba(233,236,244,.95);
+      color: rgba(233,236,244,.92);
     }
-
     .badge{
-      font-size:12px; font-weight:700; /* slightly lighter */
-      padding:5px 10px; border-radius:999px;
+      font-size:12px;
+      font-weight:500;
+      padding:5px 10px;
+      border-radius:999px;
       border:1px solid var(--line);
       background: rgba(255,255,255,.04);
       color: var(--muted);
@@ -68,8 +67,11 @@
       justify-content:flex-end;
     }
     .nav a{
-      color:var(--muted); font-weight:700; font-size:13px;
-      padding:8px 10px; border-radius:12px;
+      color:var(--muted);
+      font-weight:600;
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:12px;
       border:1px solid transparent;
       transition: background .12s ease, border-color .12s ease, transform .08s ease;
     }
@@ -85,24 +87,36 @@
       display:inline-flex; gap:10px; align-items:center;
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
-      padding:7px 12px; border-radius:999px;
-      color:var(--muted); font-size:13px; font-weight:700;
+      padding:7px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:600;
     }
-    h1{margin:14px 0 10px; font-size:44px; line-height:1.1; letter-spacing:-.3px}
+
+    /* Headings are the only bold elements */
+    h1, h2, h3{
+      font-weight:800;
+      letter-spacing:-.2px;
+    }
+    h1{margin:14px 0 10px; font-size:44px; line-height:1.1}
     .subtitle{
       margin:0 0 14px;
       color:var(--muted);
       font-size:16px;
       max-width:86ch;
+      font-weight:400;
     }
+
     .cta{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 0}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px; border-radius:14px;
+      padding:10px 14px;
+      border-radius:14px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.05);
       color:var(--text);
-      font-weight:800;
+      font-weight:600;
       transition: transform .08s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
       cursor:pointer;
       user-select:none;
@@ -129,8 +143,9 @@
     @media(min-width:1080px){ .grid.cols3{grid-template-columns:1fr 1fr 1fr} }
 
     .section{margin-top:32px}
-    .section h2{margin:0 0 10px; font-size:20px; letter-spacing:-.2px}
-    .section p{margin:0; color:var(--muted)}
+    .section h2{margin:0 0 10px; font-size:20px}
+    .section p{margin:0; color:var(--muted); font-weight:400}
+
     .card{
       border:1px solid var(--line);
       background:var(--panel);
@@ -144,16 +159,24 @@
       background: var(--panel2);
     }
     .card h3{margin:0 0 6px; font-size:18px}
-    .meta{color:var(--muted); font-size:13px; margin:0 0 10px; font-weight:700}
-    .small{font-size:13px; color:var(--muted)}
+    .meta{
+      color:var(--muted);
+      font-size:13px;
+      margin:0 0 10px;
+      font-weight:400;
+    }
+    .small{font-size:13px; color:var(--muted); font-weight:400}
+
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
     .chip{
-      font-size:12px; color:var(--muted);
-      padding:6px 10px; border-radius:999px;
+      font-size:12px;
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:999px;
       background:var(--chip);
       border:1px solid var(--line);
       white-space:nowrap;
-      font-weight:700;
+      font-weight:500;
     }
 
     .row{
@@ -162,30 +185,40 @@
       flex-wrap:wrap;
     }
     .pill{
-      font-size:12px; font-weight:900; letter-spacing:.2px;
-      padding:6px 10px; border-radius:999px;
+      font-size:12px;
+      font-weight:500;
+      letter-spacing:.15px;
+      padding:6px 10px;
+      border-radius:999px;
       border:1px solid var(--line);
       background: rgba(255,255,255,.04);
-      color: var(--muted);
+      color: rgba(233,236,244,.80);
     }
-    .pill.ok{color: rgba(102,217,168,.95); border-color: rgba(102,217,168,.25)}
-    .pill.warn{color: rgba(255,212,121,.95); border-color: rgba(255,212,121,.25)}
 
     .divider{
-      height:1px; background: var(--line);
+      height:1px;
+      background: var(--line);
       margin:16px 0 0;
     }
 
     .footer{
-      margin-top:52px; padding-top:18px; border-top:1px solid var(--line);
-      color:var(--muted); font-size:13px;
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin-top:52px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      font-weight:400;
     }
 
     ul.list{
       margin:0;
       padding-left:18px;
       color:var(--muted);
+      font-weight:400;
     }
     ul.list li{margin:6px 0}
 
@@ -212,14 +245,14 @@
       padding:2px 2px 10px;
       border-bottom:1px solid var(--line);
     }
-    .modalTop strong{font-size:14px; letter-spacing:.2px}
+    .modalTop strong{font-size:14px; letter-spacing:.2px; font-weight:800}
     .close{
       border:1px solid var(--line);
       background: rgba(255,255,255,.04);
       color: var(--text);
       border-radius:12px;
       padding:8px 10px;
-      font-weight:500;
+      font-weight:600;
       cursor:pointer;
     }
     .close:hover{border-color: rgba(122,162,255,.4)}
@@ -236,21 +269,14 @@
       border-radius:16px;
       padding:12px;
     }
-    .k .label{font-size:12px; color:var(--muted); font-weight:900; letter-spacing:.35px; text-transform:uppercase}
-    .k .value{margin-top:6px; color:var(--text); font-weight:700}
-
-    .toast{
-      position:fixed; left:50%; bottom:18px; transform: translateX(-50%);
-      background: rgba(11,16,32,.92);
-      border: 1px solid var(--line);
-      color: var(--text);
-      padding:10px 12px;
-      border-radius:14px;
-      font-weight:800;
-      display:none;
-      z-index:1000;
-      box-shadow: 0 14px 40px rgba(0,0,0,.45);
+    .k .label{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:600;
+      letter-spacing:.35px;
+      text-transform:uppercase
     }
+    .k .value{margin-top:6px; color:var(--text); font-weight:400}
 
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto}
@@ -279,9 +305,10 @@
 
     <header class="hero">
       <div class="kicker">Machine Learning • Time-Series • Healthcare AI</div>
-      <h1>AI engineer focused on practical, reproducible ML.</h1>
+      <h1>Building machine learning systems for real-world signals.</h1>
       <p class="subtitle">
-        I build ML workflows with clean data handling, strong feature engineering, and disciplined experimentation. 
+        I work on end-to-end ML: data quality, feature engineering, model baselines, and iteration.
+        Current focus: time-series physiological signals (PPG) for cuffless blood pressure research.
       </p>
 
       <div class="cta">
@@ -366,7 +393,7 @@
         <div class="card">
           <div class="row">
             <h3 style="margin:0;">Cuffless blood pressure estimation (PPG)</h3>
-            <span class="pill ok">Active</span>
+            <span class="pill">Active</span>
           </div>
           <p class="meta">Time-series • Feature extraction • Regression workflow</p>
           <p class="small">
@@ -378,14 +405,14 @@
           </div>
           <div class="row">
             <button class="btn" data-modal="ppg">Details</button>
-            <span class="pill">Healthcare AI</span>
+            <span class="pill">Project</span>
           </div>
         </div>
 
         <div class="card">
           <div class="row">
             <h3 style="margin:0;">Face mask detection (CNN)</h3>
-            <span class="pill warn">Academic</span>
+            <span class="pill">Project</span>
           </div>
           <p class="meta">Computer vision • Preprocessing • Training workflow</p>
           <p class="small">
@@ -396,14 +423,14 @@
           </div>
           <div class="row">
             <button class="btn" data-modal="cnn">Details</button>
-            <span class="pill">Computer Vision</span>
+            <span class="pill">Project</span>
           </div>
         </div>
 
         <div class="card">
           <div class="row">
             <h3 style="margin:0;">Early disease prediction (ML)</h3>
-            <span class="pill warn">Academic</span>
+            <span class="pill">Project</span>
           </div>
           <p class="meta">Structured data • EDA • Model comparison</p>
           <p class="small">
@@ -415,14 +442,14 @@
           </div>
           <div class="row">
             <button class="btn" data-modal="ml">Details</button>
-            <span class="pill">Predictive modeling</span>
+            <span class="pill">Project</span>
           </div>
         </div>
 
         <div class="card">
           <div class="row">
             <h3 style="margin:0;">Smart Farmer (IoT + cloud analytics)</h3>
-            <span class="pill warn">Industry</span>
+            <span class="pill">Project</span>
           </div>
           <p class="meta">IoT data • Cloud DB • Workflow automation</p>
           <p class="small">
@@ -433,13 +460,12 @@
           </div>
           <div class="row">
             <button class="btn" data-modal="iot">Details</button>
-            <span class="pill">Data systems</span>
+            <span class="pill">Project</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ✅ CHANGED: Research is now ONE clean section (no grid, no extra card) -->
     <section class="section" id="research">
       <h2>Research</h2>
       <p>Current focus: cuffless blood pressure estimation using PPG signals.</p>
@@ -486,7 +512,7 @@
         <div class="card">
           <h3>Engineering practices</h3>
           <div class="chips">
-            <span class="chip">Clean documentation</span>
+            <span class="chip">Documentation</span>
             <span class="chip">Structured outputs</span>
             <span class="chip">Reproducible runs</span>
             <span class="chip">Readable code</span>
@@ -531,7 +557,7 @@
         <div class="row">
           <div>
             <div class="meta" style="margin:0 0 6px;">Email</div>
-            <div style="font-weight:800;">potailkarthikashalini@gmail.com</div>
+            <div style="font-weight:400;">potailkarthikashalini@gmail.com</div>
           </div>
           <a class="btn primary" href="https://mail.google.com/mail/?view=cm&to=potailkarthikashalini@gmail.com" target="_blank" rel="noreferrer noopener">Open Gmail</a>
         </div>
@@ -539,7 +565,7 @@
         <div class="row" style="margin-top:14px;">
           <div>
             <div class="meta" style="margin:0 0 6px;">LinkedIn</div>
-            <div style="font-weight:800;">linkedin.com/in/karthika-shalini</div>
+            <div style="font-weight:400;">linkedin.com/in/karthika-shalini</div>
           </div>
           <a class="btn" href="https://www.linkedin.com/in/karthika-shalini/" target="_blank" rel="noreferrer noopener">Open LinkedIn</a>
         </div>
@@ -562,8 +588,6 @@
     </div>
   </div>
 
-  <div class="toast" id="toast">Copied</div>
-
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
@@ -573,8 +597,7 @@
         blocks: [
           { label: "Focus", value: "Time-series preprocessing, morphology feature extraction, and regression baselines for SBP/DBP estimation." },
           { label: "Pipeline", value: "Segmentation → filtering/normalization → feature extraction → feature selection → baseline regressors → structured reporting." },
-          { label: "Outputs", value: "Saved feature tables, plots, run summaries, and iteration notes for consistent comparison." },
-          { label: "Next steps", value: "Stability improvements across subjects, robustness checks, and packaging for sharing." }
+          { label: "Outputs", value: "Saved feature tables, plots, run summaries, and iteration notes for consistent comparison." }
         ]
       },
       cnn: {
@@ -582,8 +605,7 @@
         blocks: [
           { label: "Focus", value: "Image preprocessing, augmentation strategies, and CNN training/validation workflow." },
           { label: "Workflow", value: "Dataset prep → augmentation → training runs → validation checks → organized artifacts." },
-          { label: "Outputs", value: "Training logs and structured run folders." },
-          { label: "Next steps", value: "Architecture variants and deployment-friendly preprocessing." }
+          { label: "Outputs", value: "Training logs and structured run folders." }
         ]
       },
       ml: {
@@ -591,8 +613,7 @@
         blocks: [
           { label: "Focus", value: "Structured data preprocessing, EDA, feature engineering, and multi-model comparisons." },
           { label: "Workflow", value: "Cleaning → EDA → feature engineering → model training → consistent evaluation scripts." },
-          { label: "Outputs", value: "EDA summaries, feature tables, and comparison reports for models." },
-          { label: "Next steps", value: "Feature refinement and better validation strategy." }
+          { label: "Outputs", value: "EDA summaries, feature tables, and comparison reports for models." }
         ]
       },
       iot: {
@@ -600,8 +621,7 @@
         blocks: [
           { label: "Focus", value: "IoT data integration, cloud database workflows, and analytics-driven monitoring." },
           { label: "Workflow", value: "Device data → ingestion → storage → analysis scripts → monitoring workflows." },
-          { label: "Outputs", value: "Data workflows, scripts, and documentation for the monitoring pipeline." },
-          { label: "Next steps", value: "Hardening data schemas and performance optimization." }
+          { label: "Outputs", value: "Data workflows, scripts, and documentation for the monitoring pipeline." }
         ]
       },
       contact: {
@@ -609,8 +629,7 @@
         blocks: [
           { label: "Email", value: "potailkarthikashalini@gmail.com" },
           { label: "LinkedIn", value: "linkedin.com/in/karthika-shalini" },
-          { label: "Preferred", value: "Email for fastest response." },
-          { label: "Topics", value: "ML engineering roles, research collaboration, and project discussions." }
+          { label: "Preferred", value: "Email for fastest response." }
         ]
       }
     };
@@ -676,4 +695,3 @@
   </script>
 </body>
 </html>
-
