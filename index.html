@@ -45,17 +45,23 @@
       backdrop-filter: blur(10px);
       background: rgba(11,16,32,.74);
     }
+
+    /* ✅ CHANGED: Make name elegant, not bold */
     .brand{
-      font-weight:900; letter-spacing:.25px;
+      font-weight:600;               /* was 900 */
+      letter-spacing:.18px;
       display:flex; align-items:center; gap:10px;
+      color: rgba(233,236,244,.95);
     }
+
     .badge{
-      font-size:12px; font-weight:800;
+      font-size:12px; font-weight:700; /* slightly lighter */
       padding:5px 10px; border-radius:999px;
       border:1px solid var(--line);
       background: rgba(255,255,255,.04);
       color: var(--muted);
     }
+
     .nav{
       display:flex; align-items:center; gap:10px;
       flex-wrap:wrap;
@@ -73,6 +79,7 @@
       background: rgba(255,255,255,.045);
       transform: translateY(-1px);
     }
+
     .hero{padding:36px 0 14px}
     .kicker{
       display:inline-flex; gap:10px; align-items:center;
@@ -103,7 +110,7 @@
     .btn:hover{
       transform: translateY(-1px);
       border-color: rgba(122,162,255,.48);
-      background: rgba(255,255,255,.07);
+      background:rgba(255,255,255,.07);
       box-shadow: 0 8px 28px rgba(0,0,0,.25);
     }
     .btn.primary{
@@ -175,6 +182,13 @@
       display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
     }
 
+    ul.list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+    ul.list li{margin:6px 0}
+
     /* Modal */
     .modalOverlay{
       position:fixed; inset:0; z-index:999;
@@ -224,22 +238,7 @@
     }
     .k .label{font-size:12px; color:var(--muted); font-weight:900; letter-spacing:.35px; text-transform:uppercase}
     .k .value{margin-top:6px; color:var(--text); font-weight:700}
-    .copyRow{
-      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-      margin-top:12px;
-    }
-    .copyBox{
-      flex:1 1 260px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      border-radius:14px;
-      padding:10px 12px;
-      color: var(--text);
-      font-weight:700;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-    }
+
     .toast{
       position:fixed; left:50%; bottom:18px; transform: translateX(-50%);
       background: rgba(11,16,32,.92);
@@ -253,7 +252,6 @@
       box-shadow: 0 14px 40px rgba(0,0,0,.45);
     }
 
-    /* Reduce motion accessibility */
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto}
       .btn,.card,.nav a{transition:none}
@@ -283,7 +281,8 @@
       <div class="kicker">Machine Learning • Time-Series • Healthcare AI</div>
       <h1>AI engineer focused on practical, reproducible ML.</h1>
       <p class="subtitle">
-        I build ML workflows with clean data handling, strong feature engineering, and disciplined experimentation. Current focus: time-series physiological signals (PPG) for cuffless blood pressure estimation.
+        I build ML workflows with clean data handling, strong feature engineering, and disciplined experimentation.
+        Current focus: time-series physiological signals (PPG) for cuffless blood pressure estimation.
       </p>
 
       <div class="cta">
@@ -297,27 +296,21 @@
       <div class="grid cols3" style="margin-top:16px;">
         <div class="card">
           <h3>What I do</h3>
-          <p class="small">
-            Time-series ML, signal preprocessing, feature extraction, and baseline-to-iteration modeling.
-          </p>
+          <p class="small">Time-series ML, signal preprocessing, feature extraction, and baseline-to-iteration modeling.</p>
           <div class="chips">
             <span class="chip">PPG</span><span class="chip">Regression</span><span class="chip">Feature selection</span>
           </div>
         </div>
         <div class="card">
           <h3>How I work</h3>
-          <p class="small">
-            Reproducible notebooks + scripts, structured outputs, and clean documentation for iteration.
-          </p>
+          <p class="small">Reproducible notebooks + scripts, structured outputs, and clean documentation for iteration.</p>
           <div class="chips">
             <span class="chip">Reproducibility</span><span class="chip">Versioning</span><span class="chip">Reporting</span>
           </div>
         </div>
         <div class="card">
           <h3>What you get</h3>
-          <p class="small">
-            Clear problem framing, measurable baselines, and organized artifacts.
-          </p>
+          <p class="small">Clear problem framing, measurable baselines, and organized artifacts.</p>
           <div class="chips">
             <span class="chip">Baselines</span><span class="chip">Artifacts</span><span class="chip">Insights</span>
           </div>
@@ -332,9 +325,7 @@
       <div class="grid cols2" style="margin-top:14px;">
         <div class="card">
           <h3>Time-series + signal processing</h3>
-          <p class="small">
-            Segmentation, filtering, normalization, quality checks, and waveform-driven feature extraction.
-          </p>
+          <p class="small">Segmentation, filtering, normalization, quality checks, and waveform-driven feature extraction.</p>
           <div class="chips">
             <span class="chip">Segmentation</span><span class="chip">Filtering</span><span class="chip">Normalization</span>
             <span class="chip">Morphology features</span>
@@ -343,9 +334,7 @@
 
         <div class="card">
           <h3>Modeling discipline</h3>
-          <p class="small">
-            Baselines first, controlled changes, clean comparisons, and consistent reporting.
-          </p>
+          <p class="small">Baselines first, controlled changes, clean comparisons, and consistent reporting.</p>
           <div class="chips">
             <span class="chip">Ridge regression</span><span class="chip">Ensembles</span><span class="chip">Cross-validation</span>
             <span class="chip">Error analysis</span>
@@ -354,9 +343,7 @@
 
         <div class="card">
           <h3>Experiment organization</h3>
-          <p class="small">
-            Repeatable runs, saved artifacts, and structured outputs for review and iteration.
-          </p>
+          <p class="small">Repeatable runs, saved artifacts, and structured outputs for review and iteration.</p>
           <div class="chips">
             <span class="chip">Notebooks + scripts</span><span class="chip">Artifacts</span><span class="chip">Plots</span>
             <span class="chip">Run summaries</span>
@@ -365,9 +352,7 @@
 
         <div class="card">
           <h3>Engineering mindset</h3>
-          <p class="small">
-            Focus on clarity, maintainability, and practical constraints.
-          </p>
+          <p class="small">Focus on clarity, maintainability, and practical constraints.</p>
           <div class="chips">
             <span class="chip">Robustness</span><span class="chip">Documentation</span><span class="chip">Iteration</span>
           </div>
@@ -455,22 +440,21 @@
       </div>
     </section>
 
+    <!-- ✅ CHANGED: Research is now ONE clean section (no grid, no extra card) -->
     <section class="section" id="research">
       <h2>Research</h2>
-      <p>Current focus: cuffless BP estimation using PPG signals.</p>
+      <p>Current focus: cuffless blood pressure estimation using PPG signals.</p>
 
-      <div class="grid cols2" style="margin-top:14px;">
-        <div class="card">
-          <h3>What I’m building</h3>
-          <ul class="list">
-            <li>Segmentation + quality checks for physiological time-series</li>
-            <li>Waveform morphology feature extraction + feature table creation</li>
-            <li>Feature selection experiments to identify informative predictors</li>
-            <li>Baseline regression modeling and iterative improvement cycles</li>
-            <li>Clean experiment organization for review and repeatability</li>
-          </ul>
-        </div>
-        </div>
+      <div class="card" style="margin-top:14px;">
+        <h3>Current work</h3>
+        <ul class="list">
+          <li>Segmentation + quality checks for physiological time-series</li>
+          <li>Waveform morphology feature extraction + feature table creation</li>
+          <li>Feature selection experiments to identify informative predictors</li>
+          <li>Baseline regression modeling and iterative improvement cycles</li>
+          <li>Clean experiment organization for review and repeatability</li>
+        </ul>
+      </div>
     </section>
 
     <section class="section" id="skills">
@@ -530,12 +514,12 @@
           <li>Crash Course on Python (Coursera, 2022)</li>
           <li>MERN Full Stack Guide (Udemy)</li>
           <li>iOS & Swift – The Complete iOS App Development Bootcamp (Udemy)</li>
-          <li>Deep Learning Specialization (Coursera) </li>
-          <li>Machine Learning Specialization (Coursera) </li>
-          <li>TensorFlow Developer Certificate </li>
-          <li>AWS Certified Cloud Practitioner </li>
-          <li>Microsoft Azure AI Fundamentals (AI-900) </li>
-          <li>Google Data Analytics Professional Certificate </li>
+          <li>Deep Learning Specialization (Coursera)</li>
+          <li>Machine Learning Specialization (Coursera)</li>
+          <li>TensorFlow Developer Certificate</li>
+          <li>AWS Certified Cloud Practitioner</li>
+          <li>Microsoft Azure AI Fundamentals (AI-900)</li>
+          <li>Google Data Analytics Professional Certificate</li>
         </ul>
       </div>
     </section>
@@ -548,7 +532,7 @@
         <div class="row">
           <div>
             <div class="meta" style="margin:0 0 6px;">Email</div>
-            <div style="font-weight:900;">potailkarthikashalini@gmail.com</div>
+            <div style="font-weight:800;">potailkarthikashalini@gmail.com</div>
           </div>
           <a class="btn primary" href="https://mail.google.com/mail/?view=cm&to=potailkarthikashalini@gmail.com" target="_blank" rel="noreferrer noopener">Open Gmail</a>
         </div>
@@ -556,7 +540,7 @@
         <div class="row" style="margin-top:14px;">
           <div>
             <div class="meta" style="margin:0 0 6px;">LinkedIn</div>
-            <div style="font-weight:900;">linkedin.com/in/karthika-shalini</div>
+            <div style="font-weight:800;">linkedin.com/in/karthika-shalini</div>
           </div>
           <a class="btn" href="https://www.linkedin.com/in/karthika-shalini/" target="_blank" rel="noreferrer noopener">Open LinkedIn</a>
         </div>
@@ -569,7 +553,6 @@
     </div>
   </div>
 
-  <!-- Details Modals -->
   <div class="modalOverlay" id="overlay" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modalTop">
@@ -583,20 +566,8 @@
   <div class="toast" id="toast">Copied</div>
 
   <script>
-    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Toast
-    const toast = document.getElementById("toast");
-    let toastTimer = null;
-    function showToast(msg){
-      toast.textContent = msg;
-      toast.style.display = "block";
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.style.display = "none", 1400);
-    }
-
-    // Modal content
     const modalContent = {
       ppg: {
         title: "Cuffless blood pressure estimation (PPG)",
@@ -612,7 +583,7 @@
         blocks: [
           { label: "Focus", value: "Image preprocessing, augmentation strategies, and CNN training/validation workflow." },
           { label: "Workflow", value: "Dataset prep → augmentation → training runs → validation checks → organized artifacts." },
-          { label: "Outputs", value: "Training logs, confusion-matrix visuals (offline), and structured run folders." },
+          { label: "Outputs", value: "Training logs and structured run folders." },
           { label: "Next steps", value: "Architecture variants and deployment-friendly preprocessing." }
         ]
       },
@@ -629,7 +600,7 @@
         title: "Smart Farmer (IoT + cloud analytics)",
         blocks: [
           { label: "Focus", value: "IoT data integration, cloud database workflows, and analytics-driven monitoring." },
-          { label: "Workflow", value: "Device data → ingestion → storage → analysis scripts → monitoring dashboards (conceptual)." },
+          { label: "Workflow", value: "Device data → ingestion → storage → analysis scripts → monitoring workflows." },
           { label: "Outputs", value: "Data workflows, scripts, and documentation for the monitoring pipeline." },
           { label: "Next steps", value: "Hardening data schemas and performance optimization." }
         ]
@@ -645,11 +616,19 @@
       }
     };
 
-    // Modal helpers
     const overlay = document.getElementById("overlay");
     const modalTitle = document.getElementById("modalTitle");
     const modalBody = document.getElementById("modalBody");
     const closeModalBtn = document.getElementById("closeModal");
+
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
 
     function openModal(key){
       const data = modalContent[key];
@@ -672,8 +651,6 @@
 
       overlay.style.display = "flex";
       overlay.setAttribute("aria-hidden", "false");
-
-      // focus close button for accessibility
       closeModalBtn.focus();
     }
 
@@ -682,52 +659,21 @@
       overlay.setAttribute("aria-hidden", "true");
     }
 
-    // Escape to close
     window.addEventListener("keydown", (e) => {
       if(e.key === "Escape" && overlay.style.display === "flex") closeModal();
     });
 
-    // Click outside to close
     overlay.addEventListener("click", (e) => {
       if(e.target === overlay) closeModal();
     });
 
     closeModalBtn.addEventListener("click", closeModal);
 
-    // Details buttons
     document.querySelectorAll("[data-modal]").forEach(btn => {
       btn.addEventListener("click", () => openModal(btn.getAttribute("data-modal")));
     });
 
-    // Contact button opens modal
     document.getElementById("openContact").addEventListener("click", () => openModal("contact"));
-
-    // Copy email
-    document.getElementById("copyEmail").addEventListener("click", async () => {
-      try{
-        await navigator.clipboard.writeText("potailkarthikashalini@gmail.com");
-        showToast("Email copied");
-      }catch{
-        // fallback
-        const t = document.createElement("textarea");
-        t.value = "potailkarthikashalini@gmail.com";
-        document.body.appendChild(t);
-        t.select();
-        document.execCommand("copy");
-        document.body.removeChild(t);
-        showToast("Email copied");
-      }
-    });
-
-    function escapeHtml(str){
-      return String(str)
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
-    }
   </script>
 </body>
 </html>
-
