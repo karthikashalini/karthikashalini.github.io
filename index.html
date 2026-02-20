@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Karthika Shalini Potail | AI Engineer Portfolio</title>
-  <meta name="description" content="Portfolio of Karthika Shalini Potail — AI/ML, time-series, healthcare AI, data pipelines." />
+  <title>Karthika Shalini Potail | Portfolio</title>
+  <meta name="description" content="Portfolio of Karthika Shalini Potail — AI/ML, time-series, healthcare AI." />
   <style>
     :root{
       --bg:#0b1020;
-      --card:#111a33;
       --text:#e9ecf4;
       --muted:#b8c0d9;
       --line:rgba(255,255,255,.12);
@@ -24,7 +23,7 @@
                   radial-gradient(900px 700px at 85% 15%, rgba(157,122,255,.15), transparent 55%),
                   var(--bg);
       color:var(--text);
-      line-height:1.5;
+      line-height:1.55;
     }
     a{color:var(--text); text-decoration:none}
     a:hover{color:var(--accent)}
@@ -42,8 +41,8 @@
       border:1px solid var(--line); background:rgba(255,255,255,.04);
       padding:6px 10px; border-radius:999px; color:var(--muted); font-size:13px;
     }
-    h1{margin:14px 0 10px; font-size:40px; line-height:1.1}
-    .subtitle{margin:0 0 16px; color:var(--muted); font-size:16px; max-width:72ch}
+    h1{margin:14px 0 10px; font-size:40px; line-height:1.12}
+    .subtitle{margin:0 0 16px; color:var(--muted); font-size:16px; max-width:76ch}
     .cta{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 0}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -77,18 +76,18 @@
       background:var(--chip);
       border:1px solid var(--line);
     }
-    .card .links{display:flex; gap:12px; margin-top:12px; flex-wrap:wrap}
-    .card .links a{
-      color:var(--muted); font-weight:600; border-bottom:1px dashed rgba(255,255,255,.25);
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
     }
-    .card .links a:hover{color:var(--accent); border-bottom-color:rgba(122,162,255,.8)}
+    .list li{margin:6px 0}
     .footer{
       margin-top:48px; padding-top:18px; border-top:1px solid var(--line);
       color:var(--muted); font-size:13px;
       display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
     }
     .small{font-size:13px; color:var(--muted)}
-    code.inline{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:8px; border:1px solid var(--line)}
   </style>
 </head>
 
@@ -106,93 +105,71 @@
     </div>
 
     <header class="hero">
-      <div class="kicker">AI Engineer • Machine Learning • Time-Series & Healthcare AI</div>
-      <h1>Building practical ML systems — from messy data to usable models.</h1>
+      <div class="kicker">AI / ML • Time-Series • Healthcare AI</div>
+      <h1>AI-focused portfolio</h1>
       <p class="subtitle">
-        I’m a Computer Engineering graduate student at UT Dallas working on machine learning projects focused on
-        time-series physiological data (PPG) and applied AI. I care about clean pipelines, reproducible experiments,
-        and clear documentation.
+        Computer Engineering graduate student at UT Dallas working on applied machine learning with an emphasis on
+        time-series physiological data (PPG), feature engineering, and reproducible ML workflows.
       </p>
       <div class="cta">
-        <!-- Replace these with your real links -->
-        <a class="btn primary" href="https://www.linkedin.com/in/karthika-shalini" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="https://github.com/karthikashalini" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn" href="mailto:potailkarthikashalini@gmail.com">Email</a>
-        <!-- Optional: add resume PDF in repo and link here -->
-        <a class="btn" href="./resume.pdf">Resume (PDF)</a>
+        <a class="btn primary" href="mailto:potailkarthikashalini@gmail.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/karthika-shalini/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
       </div>
-      <p class="small" style="margin-top:10px;">
-        Tip: keep the homepage tight. Let your repos + READMEs prove depth.
-      </p>
     </header>
 
     <section class="section" id="projects">
-      <h2>Featured Projects</h2>
-      <p>3–4 projects that reflect real work. Each links to a clean GitHub repo with a strong README.</p>
+      <h2>Projects</h2>
+      <p>Selected work areas and pipelines.</p>
 
       <div class="grid cols2" style="margin-top:14px;">
         <div class="card">
           <h3>Cuffless Blood Pressure Estimation (PPG)</h3>
-          <p class="meta">Time-series • Signal processing • Regression pipeline</p>
-          <p>
-            End-to-end workflow for preprocessing PPG waveforms, extracting morphology features, running feature
-            selection, training regression baselines, and organizing evaluation outputs for iteration.
+          <p class="meta">Time-series • Signal processing • Regression workflow</p>
+          <p class="small">
+            End-to-end workflow for preparing PPG waveforms, extracting morphology features, applying feature selection,
+            training regression baselines, and organizing outputs for iteration.
           </p>
           <div class="chips">
             <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
             <span class="chip">Scikit-learn</span><span class="chip">Time-series</span>
           </div>
-          <div class="links">
-            <a href="REPLACE_WITH_REPO_LINK" target="_blank" rel="noreferrer">Repo</a>
-            <a href="REPLACE_WITH_README_SECTION_LINK" target="_blank" rel="noreferrer">Readme</a>
-          </div>
         </div>
 
         <div class="card">
           <h3>Face Mask Detection (CNN)</h3>
-          <p class="meta">Computer vision • Data prep • Model training workflow</p>
-          <p>
-            Built a CNN-based image classification workflow with preprocessing, augmentation, training/validation,
-            and organized outputs for reproducibility.
+          <p class="meta">Computer vision • Preprocessing • Model training</p>
+          <p class="small">
+            CNN-based image classification workflow including preprocessing, augmentation, training/validation,
+            and experiment organization.
           </p>
           <div class="chips">
-            <span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">Deep Learning</span>
-            <span class="chip">Image preprocessing</span>
-          </div>
-          <div class="links">
-            <a href="REPLACE_WITH_REPO_LINK" target="_blank" rel="noreferrer">Repo</a>
+            <span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">CNN</span>
+            <span class="chip">Deep Learning</span>
           </div>
         </div>
 
         <div class="card">
           <h3>Early Disease Prediction (ML)</h3>
           <p class="meta">Structured data • Feature engineering • Model comparison</p>
-          <p>
-            Data cleaning + EDA, feature engineering, training classical ML models, and comparing approaches with
-            consistent evaluation scripts and reporting.
+          <p class="small">
+            Data cleaning + EDA, feature engineering, training classical ML models, and comparison workflows with
+            consistent evaluation scripts.
           </p>
           <div class="chips">
             <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Scikit-learn</span>
             <span class="chip">EDA</span>
-          </div>
-          <div class="links">
-            <a href="REPLACE_WITH_REPO_LINK" target="_blank" rel="noreferrer">Repo</a>
           </div>
         </div>
 
         <div class="card">
           <h3>Smart Farmer (IoT + Cloud Analytics)</h3>
           <p class="meta">IoT data • Cloud DB • Workflow automation</p>
-          <p>
-            Integrated IoT device data into cloud workflows and storage, enabling monitoring and analytics for
-            agriculture use cases.
+          <p class="small">
+            Integrated IoT device data into cloud workflows and storage to support monitoring and analytics.
           </p>
           <div class="chips">
             <span class="chip">IBM Watson</span><span class="chip">Node-RED</span><span class="chip">Cloudant DB</span>
             <span class="chip">Python</span>
-          </div>
-          <div class="links">
-            <a href="REPLACE_WITH_REPO_LINK" target="_blank" rel="noreferrer">Repo</a>
           </div>
         </div>
       </div>
@@ -200,21 +177,17 @@
 
     <section class="section" id="research">
       <h2>Research</h2>
-      <p>
-        Current focus: cuffless blood pressure estimation using PPG signals. Work includes dataset handling,
-        preprocessing/segmentation, waveform feature extraction, feature selection, and iterative modeling.
-      </p>
+      <p>Current focus: cuffless blood pressure estimation using PPG signals.</p>
+
       <div class="card" style="margin-top:14px;">
-        <h3>What I’m doing right now</h3>
-        <ul style="margin:10px 0 0; color:var(--muted); padding-left:18px;">
-          <li>Preparing PPG datasets (segmentation, filtering, normalization)</li>
-          <li>Extracting morphology features and organizing feature tables</li>
-          <li>Running baseline regressors + iterating on feature selection</li>
-          <li>Maintaining reproducible notebooks + scripts with version control</li>
+        <h3>Current work</h3>
+        <ul class="list">
+          <li>Dataset preparation: segmentation, filtering, normalization</li>
+          <li>Waveform morphology feature extraction and feature table creation</li>
+          <li>Feature selection experiments to identify informative predictors</li>
+          <li>Baseline regression modeling and iterative improvement cycles</li>
+          <li>Reproducible notebooks and scripts with version control</li>
         </ul>
-        <p class="small" style="margin-top:12px;">
-          (No accuracy numbers shown on the site — results stay in the repo reports.)
-        </p>
       </div>
     </section>
 
@@ -229,6 +202,7 @@
             <span class="chip">Regression</span>
             <span class="chip">Classification</span>
             <span class="chip">Cross-validation</span>
+            <span class="chip">Model evaluation</span>
             <span class="chip">Time-series analysis</span>
             <span class="chip">Signal preprocessing</span>
           </div>
@@ -238,7 +212,7 @@
           <div class="chips">
             <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">MATLAB</span><span class="chip">C</span>
             <span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
-            <span class="chip">Git</span><span class="chip">Linux</span><span class="chip">Jupyter</span>
+            <span class="chip">OpenCV</span><span class="chip">Git</span><span class="chip">Linux</span><span class="chip">Jupyter</span>
           </div>
         </div>
       </div>
@@ -247,11 +221,17 @@
     <section class="section" id="certifications">
       <h2>Certifications</h2>
       <div class="card" style="margin-top:14px;">
-        <ul style="margin:0; padding-left:18px; color:var(--muted);">
+        <ul class="list">
           <li>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</li>
-          <li>iOS & Swift – The Complete iOS App Development Bootcamp (Udemy)</li>
-          <li>MERN Full Stack Guide (Udemy)</li>
           <li>Crash Course on Python (Coursera, 2022)</li>
+          <li>MERN Full Stack Guide (Udemy)</li>
+          <li>iOS & Swift – The Complete iOS App Development Bootcamp (Udemy)</li>
+
+          <li>Deep Learning Specialization (Coursera) — In Progress</li>
+          <li>Machine Learning Specialization (Coursera) — In Progress</li>
+          <li>TensorFlow Developer Certificate — Planned</li>
+          <li>AWS Certified Cloud Practitioner — Planned</li>
+          <li>Microsoft Azure AI Fundamentals (AI-900) — Planned</li>
         </ul>
       </div>
     </section>
@@ -260,16 +240,15 @@
       <h2>Contact</h2>
       <div class="card" style="margin-top:14px;">
         <p class="small">
-          Email: <a href="mailto:potailkarthikashalini@gmail.com">potailkarthikashalini@gmail.com</a><br/>
-          GitHub: <a href="https://github.com/karthikashalini" target="_blank" rel="noreferrer">github.com/karthikashalini</a><br/>
-          LinkedIn: <a href="https://www.linkedin.com/in/karthika-shalini" target="_blank" rel="noreferrer">linkedin.com/in/karthika-shalini</a>
+          <a href="mailto:potailkarthikashalini@gmail.com">potailkarthikashalini@gmail.com</a><br/>
+          <a href="https://www.linkedin.com/in/karthika-shalini/" target="_blank" rel="noreferrer noopener">linkedin.com/in/karthika-shalini</a>
         </p>
       </div>
     </section>
 
     <div class="footer">
       <div>© <span id="y"></span> Karthika Shalini Potail</div>
-      <div class="small">Built with plain HTML/CSS • Hosted on GitHub Pages</div>
+      <div class="small">GitHub Pages</div>
     </div>
   </div>
 
