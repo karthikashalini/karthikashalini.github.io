@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#0b1020" />
   <style>
     :root{
-      --bg:#0b1020;
+      --bg:#090d18;
       --panel: rgba(255,255,255,.045);
       --panel2: rgba(255,255,255,.06);
       --text:#e9ecf4;
@@ -23,10 +23,12 @@
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      /* ✅ more elegant, calmer background */
       background:
-        radial-gradient(1200px 800px at 10% 10%, rgba(122,162,255,.18), transparent 55%),
-        radial-gradient(900px 700px at 85% 15%, rgba(157,122,255,.15), transparent 55%),
-        radial-gradient(900px 600px at 45% 95%, rgba(122,162,255,.08), transparent 55%),
+        radial-gradient(900px 600px at 12% 12%, rgba(122,162,255,.12), transparent 60%),
+        radial-gradient(800px 520px at 86% 18%, rgba(157,122,255,.10), transparent 60%),
+        radial-gradient(700px 520px at 55% 92%, rgba(255,255,255,.05), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.03), transparent 24%),
         var(--bg);
       color:var(--text);
       line-height:1.55;
@@ -35,19 +37,20 @@
     a{color:var(--text); text-decoration:none}
     a:hover{color:var(--accent)}
     .wrap{max-width:1080px; margin:0 auto; padding:22px 18px 88px}
+
     .topbar{
       position:sticky; top:0; z-index:50;
       display:flex; justify-content:space-between; align-items:center;
       padding:10px 0 12px;
       border-bottom:1px solid var(--line);
-      backdrop-filter: blur(10px);
-      background: rgba(11,16,32,.74);
+      backdrop-filter: blur(12px);
+      background: rgba(9,13,24,.72);
     }
 
     /* Elegant (not bold) */
     .brand{
-      font-weight:400;
-      letter-spacing:.18px;
+      font-weight:420;
+      letter-spacing:.16px;
       display:flex; align-items:center; gap:10px;
       color: rgba(233,236,244,.92);
     }
@@ -68,7 +71,7 @@
     }
     .nav a{
       color:var(--muted);
-      font-weight:600;
+      font-weight:560;
       font-size:13px;
       padding:8px 10px;
       border-radius:12px;
@@ -77,7 +80,7 @@
     }
     .nav a:hover{
       color:var(--text);
-      border-color: rgba(122,162,255,.35);
+      border-color: rgba(122,162,255,.32);
       background: rgba(255,255,255,.045);
       transform: translateY(-1px);
     }
@@ -91,13 +94,13 @@
       border-radius:999px;
       color:var(--muted);
       font-size:13px;
-      font-weight:600;
+      font-weight:560;
     }
 
-    /* Headings are the only bold elements */
+    /* ✅ Headings: lighter, not thick */
     h1, h2, h3{
-      font-weight:800;
-      letter-spacing:-.2px;
+      font-weight:600;
+      letter-spacing:-.12px;
     }
     h1{margin:14px 0 10px; font-size:44px; line-height:1.1}
     .subtitle{
@@ -116,20 +119,20 @@
       border:1px solid var(--line);
       background:rgba(255,255,255,.05);
       color:var(--text);
-      font-weight:600;
+      font-weight:560;
       transition: transform .08s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
       cursor:pointer;
       user-select:none;
     }
     .btn:hover{
       transform: translateY(-1px);
-      border-color: rgba(122,162,255,.48);
+      border-color: rgba(122,162,255,.42);
       background:rgba(255,255,255,.07);
-      box-shadow: 0 8px 28px rgba(0,0,0,.25);
+      box-shadow: 0 8px 28px rgba(0,0,0,.22);
     }
     .btn.primary{
-      background:linear-gradient(135deg, rgba(122,162,255,.28), rgba(157,122,255,.22));
-      border-color:rgba(122,162,255,.55);
+      background:linear-gradient(135deg, rgba(122,162,255,.22), rgba(157,122,255,.18));
+      border-color:rgba(122,162,255,.45);
     }
     .btn.ghost{
       background: transparent;
@@ -148,15 +151,15 @@
 
     .card{
       border:1px solid var(--line);
-      background:var(--panel);
+      background: rgba(255,255,255,.04);
       border-radius:18px;
       padding:16px;
       transition: transform .10s ease, border-color .12s ease, background .12s ease;
     }
     .card:hover{
       transform: translateY(-2px);
-      border-color: rgba(122,162,255,.26);
-      background: var(--panel2);
+      border-color: rgba(122,162,255,.22);
+      background: rgba(255,255,255,.055);
     }
     .card h3{margin:0 0 6px; font-size:18px}
     .meta{
@@ -173,7 +176,7 @@
       color:var(--muted);
       padding:6px 10px;
       border-radius:999px;
-      background:var(--chip);
+      background:rgba(255,255,255,.06);
       border:1px solid var(--line);
       white-space:nowrap;
       font-weight:500;
@@ -187,12 +190,12 @@
     .pill{
       font-size:12px;
       font-weight:500;
-      letter-spacing:.15px;
+      letter-spacing:.12px;
       padding:6px 10px;
       border-radius:999px;
       border:1px solid var(--line);
       background: rgba(255,255,255,.04);
-      color: rgba(233,236,244,.80);
+      color: rgba(233,236,244,.78);
     }
 
     .divider{
@@ -234,28 +237,28 @@
     .modal{
       width:min(720px, 100%);
       border:1px solid var(--line);
-      background: rgba(11,16,32,.92);
+      background: rgba(9,13,24,.92);
       border-radius:20px;
       padding:16px;
       box-shadow: 0 18px 70px rgba(0,0,0,.55);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
     .modalTop{
       display:flex; justify-content:space-between; align-items:center; gap:12px;
       padding:2px 2px 10px;
       border-bottom:1px solid var(--line);
     }
-    .modalTop strong{font-size:14px; letter-spacing:.2px; font-weight:800}
+    .modalTop strong{font-size:14px; letter-spacing:.2px; font-weight:600}
     .close{
       border:1px solid var(--line);
       background: rgba(255,255,255,.04);
       color: var(--text);
       border-radius:12px;
       padding:8px 10px;
-      font-weight:600;
+      font-weight:560;
       cursor:pointer;
     }
-    .close:hover{border-color: rgba(122,162,255,.4)}
+    .close:hover{border-color: rgba(122,162,255,.35)}
     .modalBody{padding:12px 2px 2px}
     .kv{
       display:grid; gap:10px;
@@ -272,8 +275,8 @@
     .k .label{
       font-size:12px;
       color:var(--muted);
-      font-weight:600;
-      letter-spacing:.35px;
+      font-weight:560;
+      letter-spacing:.32px;
       text-transform:uppercase
     }
     .k .value{margin-top:6px; color:var(--text); font-weight:400}
@@ -306,9 +309,10 @@
     <header class="hero">
       <div class="kicker">Machine Learning • Time-Series • Healthcare AI</div>
       <h1>Building machine learning systems for real-world signals.</h1>
+
+      <!-- ✅ About in ONE sentence -->
       <p class="subtitle">
-        I work on end-to-end ML: data quality, feature engineering, model baselines, and iteration.
-        Current focus: time-series physiological signals (PPG) for cuffless blood pressure research.
+        I build end-to-end ML systems across data quality, feature engineering, and baseline-to-iteration modeling for time-series signals (PPG).
       </p>
 
       <div class="cta">
