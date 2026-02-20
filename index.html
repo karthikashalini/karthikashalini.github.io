@@ -3,53 +3,91 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Karthika Shalini Potail | AI Portfolio</title>
-  <meta name="description" content="Portfolio of Karthika Shalini Potail — AI/ML, time-series, healthcare AI, reproducible workflows." />
+  <title>Karthika Shalini Potail | AI Engineer</title>
+  <meta name="description" content="Karthika Shalini Potail — AI Engineer portfolio. Time-series ML, healthcare AI, and reproducible experimentation." />
+  <meta name="theme-color" content="#0b1020" />
   <style>
     :root{
       --bg:#0b1020;
+      --panel: rgba(255,255,255,.045);
+      --panel2: rgba(255,255,255,.06);
       --text:#e9ecf4;
       --muted:#b8c0d9;
       --line:rgba(255,255,255,.12);
       --chip:rgba(255,255,255,.08);
       --accent:#7aa2ff;
       --accent2:#9d7aff;
-      --card:rgba(255,255,255,.04);
+      --ok:#66d9a8;
+      --warn:#ffd479;
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background:
         radial-gradient(1200px 800px at 10% 10%, rgba(122,162,255,.18), transparent 55%),
         radial-gradient(900px 700px at 85% 15%, rgba(157,122,255,.15), transparent 55%),
+        radial-gradient(900px 600px at 45% 95%, rgba(102,217,168,.08), transparent 55%),
         var(--bg);
       color:var(--text);
       line-height:1.55;
+      overflow-x:hidden;
     }
     a{color:var(--text); text-decoration:none}
     a:hover{color:var(--accent)}
-    .wrap{max-width:1040px; margin:0 auto; padding:28px 18px 80px}
+    .wrap{max-width:1080px; margin:0 auto; padding:22px 18px 88px}
     .topbar{
+      position:sticky; top:0; z-index:50;
       display:flex; justify-content:space-between; align-items:center;
-      padding:8px 0 18px; border-bottom:1px solid var(--line);
-      position:sticky; top:0; backdrop-filter: blur(10px);
-      background: rgba(11,16,32,.72);
-      z-index: 10;
+      padding:10px 0 12px;
+      border-bottom:1px solid var(--line);
+      backdrop-filter: blur(10px);
+      background: rgba(11,16,32,.74);
     }
-    .brand{font-weight:800; letter-spacing:.25px}
-    .nav a{margin-left:14px; color:var(--muted); font-weight:600; font-size:14px}
-    .nav a:hover{color:var(--text)}
-
-    .hero{padding:34px 0 16px}
+    .brand{
+      font-weight:900; letter-spacing:.25px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .badge{
+      font-size:12px; font-weight:800;
+      padding:5px 10px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+    }
+    .nav{
+      display:flex; align-items:center; gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
+      color:var(--muted); font-weight:700; font-size:13px;
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+      transition: background .12s ease, border-color .12s ease, transform .08s ease;
+    }
+    .nav a:hover{
+      color:var(--text);
+      border-color: rgba(122,162,255,.35);
+      background: rgba(255,255,255,.045);
+      transform: translateY(-1px);
+    }
+    .hero{padding:36px 0 14px}
     .kicker{
-      display:inline-flex; gap:8px; align-items:center;
-      border:1px solid var(--line); background:rgba(255,255,255,.04);
-      padding:6px 10px; border-radius:999px; color:var(--muted); font-size:13px;
+      display:inline-flex; gap:10px; align-items:center;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      padding:7px 12px; border-radius:999px;
+      color:var(--muted); font-size:13px; font-weight:700;
     }
-    h1{margin:14px 0 10px; font-size:42px; line-height:1.12}
-    .subtitle{margin:0 0 14px; color:var(--muted); font-size:16px; max-width:86ch}
-
+    h1{margin:14px 0 10px; font-size:44px; line-height:1.1; letter-spacing:-.3px}
+    .subtitle{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:16px;
+      max-width:86ch;
+    }
     .cta{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 0}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -57,30 +95,49 @@
       border:1px solid var(--line);
       background:rgba(255,255,255,.05);
       color:var(--text);
-      font-weight:700;
-      transition: transform .08s ease, border-color .12s ease, background .12s ease;
+      font-weight:800;
+      transition: transform .08s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
+      cursor:pointer;
+      user-select:none;
     }
-    .btn:hover{transform: translateY(-1px); border-color:rgba(122,162,255,.45); background:rgba(255,255,255,.07)}
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(122,162,255,.48);
+      background: rgba(255,255,255,.07);
+      box-shadow: 0 8px 28px rgba(0,0,0,.25);
+    }
     .btn.primary{
-      background:linear-gradient(135deg, rgba(122,162,255,.26), rgba(157,122,255,.22));
+      background:linear-gradient(135deg, rgba(122,162,255,.28), rgba(157,122,255,.22));
       border-color:rgba(122,162,255,.55);
     }
+    .btn.ghost{
+      background: transparent;
+      border-color: rgba(255,255,255,.16);
+      color: var(--muted);
+    }
+    .btn.ghost:hover{color:var(--text)}
 
     .grid{display:grid; gap:14px}
-    @media(min-width:860px){ .grid.cols2{grid-template-columns:1fr 1fr} }
-    @media(min-width:1020px){ .grid.cols3{grid-template-columns:1fr 1fr 1fr} }
+    @media(min-width:920px){ .grid.cols2{grid-template-columns:1fr 1fr} }
+    @media(min-width:1080px){ .grid.cols3{grid-template-columns:1fr 1fr 1fr} }
 
-    .section{margin-top:34px}
-    .section h2{margin:0 0 10px; font-size:20px}
+    .section{margin-top:32px}
+    .section h2{margin:0 0 10px; font-size:20px; letter-spacing:-.2px}
     .section p{margin:0; color:var(--muted)}
     .card{
       border:1px solid var(--line);
-      background:var(--card);
+      background:var(--panel);
       border-radius:18px;
       padding:16px;
+      transition: transform .10s ease, border-color .12s ease, background .12s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(122,162,255,.26);
+      background: var(--panel2);
     }
     .card h3{margin:0 0 6px; font-size:18px}
-    .meta{color:var(--muted); font-size:13px; margin:0 0 10px}
+    .meta{color:var(--muted); font-size:13px; margin:0 0 10px; font-weight:700}
     .small{font-size:13px; color:var(--muted)}
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
     .chip{
@@ -89,63 +146,118 @@
       background:var(--chip);
       border:1px solid var(--line);
       white-space:nowrap;
+      font-weight:700;
     }
 
-    .flow{
-      display:grid;
-      gap:10px;
-      grid-template-columns:repeat(1, 1fr);
-      margin-top:14px;
+    .row{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin-top:12px;
+      flex-wrap:wrap;
     }
-    @media(min-width:860px){ .flow{grid-template-columns:repeat(5, 1fr)} }
-    .step{
+    .pill{
+      font-size:12px; font-weight:900; letter-spacing:.2px;
+      padding:6px 10px; border-radius:999px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      border-radius:16px;
-      padding:12px;
-      min-height:92px;
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
     }
-    .step .n{
-      font-size:12px; color:var(--muted); font-weight:800; letter-spacing:.4px;
-      text-transform:uppercase;
-    }
-    .step .t{margin:6px 0 0; font-weight:800}
-    .step .d{margin:6px 0 0; color:var(--muted); font-size:13px}
+    .pill.ok{color: rgba(102,217,168,.95); border-color: rgba(102,217,168,.25)}
+    .pill.warn{color: rgba(255,212,121,.95); border-color: rgba(255,212,121,.25)}
 
-    .timeline{
-      display:grid;
-      gap:10px;
-      margin-top:14px;
+    .divider{
+      height:1px; background: var(--line);
+      margin:16px 0 0;
     }
-    .tl{
-      display:flex; gap:12px; align-items:flex-start;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      border-radius:16px;
-      padding:12px;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      margin-top:6px;
-      background:linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 3px rgba(122,162,255,.16);
-      flex:0 0 auto;
-    }
-    .tl .when{font-size:12px; color:var(--muted); font-weight:800}
-    .tl .what{margin-top:4px; font-weight:800}
-    .tl .desc{margin-top:6px; color:var(--muted); font-size:13px}
-
-    ul.list{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-    }
-    ul.list li{margin:6px 0}
 
     .footer{
       margin-top:52px; padding-top:18px; border-top:1px solid var(--line);
       color:var(--muted); font-size:13px;
       display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+
+    /* Modal */
+    .modalOverlay{
+      position:fixed; inset:0; z-index:999;
+      background: rgba(0,0,0,.62);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+    }
+    .modal{
+      width:min(720px, 100%);
+      border:1px solid var(--line);
+      background: rgba(11,16,32,.92);
+      border-radius:20px;
+      padding:16px;
+      box-shadow: 0 18px 70px rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
+    }
+    .modalTop{
+      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      padding:2px 2px 10px;
+      border-bottom:1px solid var(--line);
+    }
+    .modalTop strong{font-size:14px; letter-spacing:.2px}
+    .close{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      border-radius:12px;
+      padding:8px 10px;
+      font-weight:900;
+      cursor:pointer;
+    }
+    .close:hover{border-color: rgba(122,162,255,.4)}
+    .modalBody{padding:12px 2px 2px}
+    .kv{
+      display:grid; gap:10px;
+      grid-template-columns: 1fr;
+      margin-top:8px;
+    }
+    @media(min-width:740px){ .kv{grid-template-columns:1fr 1fr} }
+    .kv .k{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:16px;
+      padding:12px;
+    }
+    .k .label{font-size:12px; color:var(--muted); font-weight:900; letter-spacing:.35px; text-transform:uppercase}
+    .k .value{margin-top:6px; color:var(--text); font-weight:700}
+    .copyRow{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .copyBox{
+      flex:1 1 260px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius:14px;
+      padding:10px 12px;
+      color: var(--text);
+      font-weight:700;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+    .toast{
+      position:fixed; left:50%; bottom:18px; transform: translateX(-50%);
+      background: rgba(11,16,32,.92);
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding:10px 12px;
+      border-radius:14px;
+      font-weight:800;
+      display:none;
+      z-index:1000;
+      box-shadow: 0 14px 40px rgba(0,0,0,.45);
+    }
+
+    /* Reduce motion accessibility */
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .btn,.card,.nav a{transition:none}
+      .btn:hover,.card:hover,.nav a:hover{transform:none}
     }
   </style>
 </head>
@@ -153,11 +265,13 @@
 <body>
   <div class="wrap">
     <div class="topbar">
-      <div class="brand">Karthika Shalini Potail</div>
+      <div class="brand">
+        Karthika Shalini Potail
+        <span class="badge">AI Engineer</span>
+      </div>
       <div class="nav">
-        <a href="#focus">Focus</a>
-        <a href="#projects">Projects</a>
-        <a href="#workflow">Workflow</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#work">Work</a>
         <a href="#research">Research</a>
         <a href="#skills">Skills</a>
         <a href="#certifications">Certifications</a>
@@ -166,105 +280,169 @@
     </div>
 
     <header class="hero">
-      <div class="kicker">AI / ML • Time-Series • Healthcare AI</div>
-      <h1>Applied ML portfolio</h1>
+      <div class="kicker">Machine Learning • Time-Series • Healthcare AI</div>
+      <h1>AI engineer focused on practical, reproducible ML.</h1>
       <p class="subtitle">
-        Computer Engineering graduate student at UT Dallas focused on machine learning workflows for time-series
-        physiological data (PPG), feature engineering, and clean experiment organization.
+        I build ML workflows with clean data handling, strong feature engineering, and disciplined experimentation.
+        Current focus: time-series physiological signals (PPG) for cuffless blood pressure estimation.
       </p>
+
       <div class="cta">
-        <a class="btn primary" href="https://mail.google.com/mail/?view=cm&to=potailkarthikashalini@gmail.com" target="_blank" rel="noreferrer noopener">Email</a>
+        <button class="btn primary" id="openContact">Contact</button>
         <a class="btn" href="https://www.linkedin.com/in/karthika-shalini/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+        <a class="btn ghost" href="#work">View work</a>
       </div>
-      <p class="small" style="margin-top:10px;">
-        I prioritize reproducible code, clear documentation, and practical ML pipelines.
-      </p>
+
+      <div class="divider"></div>
+
+      <div class="grid cols3" style="margin-top:16px;">
+        <div class="card">
+          <h3>What I do</h3>
+          <p class="small">
+            Time-series ML, signal preprocessing, feature extraction, and baseline-to-iteration modeling.
+          </p>
+          <div class="chips">
+            <span class="chip">PPG</span><span class="chip">Regression</span><span class="chip">Feature selection</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>How I work</h3>
+          <p class="small">
+            Reproducible notebooks + scripts, structured outputs, and clean documentation for iteration.
+          </p>
+          <div class="chips">
+            <span class="chip">Reproducibility</span><span class="chip">Versioning</span><span class="chip">Reporting</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>What you get</h3>
+          <p class="small">
+            Clear problem framing, measurable baselines (kept in reports), and organized artifacts.
+          </p>
+          <div class="chips">
+            <span class="chip">Baselines</span><span class="chip">Artifacts</span><span class="chip">Insights</span>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <section class="section" id="focus">
-      <h2>Core focus areas</h2>
+    <section class="section" id="highlights">
+      <h2>Technical highlights</h2>
+      <p>Strengths that translate directly to production ML work.</p>
+
       <div class="grid cols2" style="margin-top:14px;">
         <div class="card">
-          <h3>Time-series modeling</h3>
+          <h3>Time-series + signal processing</h3>
           <p class="small">
-            Signal preprocessing, segmentation, feature extraction, regression baselines, and iterative improvements for physiological datasets.
+            Segmentation, filtering, normalization, quality checks, and waveform-driven feature extraction.
           </p>
           <div class="chips">
-            <span class="chip">Segmentation</span><span class="chip">Normalization</span><span class="chip">Regression</span>
+            <span class="chip">Segmentation</span><span class="chip">Filtering</span><span class="chip">Normalization</span>
+            <span class="chip">Morphology features</span>
           </div>
         </div>
+
         <div class="card">
-          <h3>Deep learning workflows</h3>
+          <h3>Modeling discipline</h3>
           <p class="small">
-            CNN-based pipelines with structured training/validation, augmentation strategies, and experiment organization.
+            Baselines first, controlled changes, clean comparisons, and consistent reporting.
           </p>
           <div class="chips">
-            <span class="chip">CNN</span><span class="chip">Training loops</span><span class="chip">Data augmentation</span>
+            <span class="chip">Ridge regression</span><span class="chip">Ensembles</span><span class="chip">Cross-validation</span>
+            <span class="chip">Error analysis</span>
           </div>
         </div>
+
         <div class="card">
-          <h3>Feature engineering</h3>
+          <h3>Experiment organization</h3>
           <p class="small">
-            Morphology feature extraction, dimensionality reduction, robust scaling, and selecting informative predictors.
+            Repeatable runs, saved artifacts, and structured outputs for review and iteration.
           </p>
           <div class="chips">
-            <span class="chip">Morphology</span><span class="chip">Feature selection</span><span class="chip">Z-score</span>
+            <span class="chip">Notebooks + scripts</span><span class="chip">Artifacts</span><span class="chip">Plots</span>
+            <span class="chip">Run summaries</span>
           </div>
         </div>
+
         <div class="card">
-          <h3>Workflow design</h3>
+          <h3>Engineering mindset</h3>
           <p class="small">
-            Reproducible notebooks and scripts, clear folder structure, and consistent evaluation/report generation.
+            Focus on clarity, maintainability, and practical constraints (data quality, drift, and robustness).
           </p>
           <div class="chips">
-            <span class="chip">Reproducibility</span><span class="chip">Version control</span><span class="chip">Reports</span>
+            <span class="chip">Robustness</span><span class="chip">Documentation</span><span class="chip">Iteration</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="projects">
-      <h2>Projects</h2>
-      <p>Selected work areas and pipelines (no accuracy metrics shown on this site).</p>
+    <section class="section" id="work">
+      <h2>Selected work</h2>
+      <p>No accuracy numbers shown on the site. Results stay in structured reports.</p>
 
       <div class="grid cols2" style="margin-top:14px;">
         <div class="card">
-          <h3>Cuffless Blood Pressure Estimation (PPG)</h3>
-          <p class="meta">Time-series • Signal processing • Regression workflow</p>
+          <div class="row">
+            <h3 style="margin:0;">Cuffless blood pressure estimation (PPG)</h3>
+            <span class="pill ok">Active</span>
+          </div>
+          <p class="meta">Time-series • Feature extraction • Regression workflow</p>
           <p class="small">
-            Workflow to prepare PPG waveforms, extract morphology features, run feature selection experiments,
+            Workflow to prepare PPG signals, extract morphology features, run feature selection experiments,
             build regression baselines, and generate consistent outputs for iteration.
           </p>
           <div class="chips">
             <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Scikit-learn</span>
           </div>
+          <div class="row">
+            <button class="btn" data-modal="ppg">Details</button>
+            <span class="pill">Healthcare AI</span>
+          </div>
         </div>
 
         <div class="card">
-          <h3>Face Mask Detection (CNN)</h3>
-          <p class="meta">Computer vision • Preprocessing • Model training</p>
+          <div class="row">
+            <h3 style="margin:0;">Face mask detection (CNN)</h3>
+            <span class="pill warn">Academic</span>
+          </div>
+          <p class="meta">Computer vision • Preprocessing • Training workflow</p>
           <p class="small">
             CNN-based image classification workflow including preprocessing, augmentation, training/validation setup,
             and experiment organization for reproducible runs.
           </p>
           <div class="chips">
-            <span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">CNN</span><span class="chip">Deep Learning</span>
+            <span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">CNN</span><span class="chip">Deep learning</span>
+          </div>
+          <div class="row">
+            <button class="btn" data-modal="cnn">Details</button>
+            <span class="pill">Computer Vision</span>
           </div>
         </div>
 
         <div class="card">
-          <h3>Early Disease Prediction (ML)</h3>
-          <p class="meta">Structured data • Feature engineering • Model comparison</p>
+          <div class="row">
+            <h3 style="margin:0;">Early disease prediction (ML)</h3>
+            <span class="pill warn">Academic</span>
+          </div>
+          <p class="meta">Structured data • EDA • Model comparison</p>
           <p class="small">
-            Data cleaning + EDA, feature engineering, training multiple ML models, and comparison workflows using consistent evaluation scripts.
+            Data cleaning + EDA, feature engineering, training multiple ML models, and comparison workflows
+            with consistent evaluation scripts.
           </p>
           <div class="chips">
             <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Scikit-learn</span><span class="chip">EDA</span>
           </div>
+          <div class="row">
+            <button class="btn" data-modal="ml">Details</button>
+            <span class="pill">Predictive modeling</span>
+          </div>
         </div>
 
         <div class="card">
-          <h3>Smart Farmer (IoT + Cloud Analytics)</h3>
+          <div class="row">
+            <h3 style="margin:0;">Smart Farmer (IoT + cloud analytics)</h3>
+            <span class="pill warn">Industry</span>
+          </div>
           <p class="meta">IoT data • Cloud DB • Workflow automation</p>
           <p class="small">
             Integrated IoT device data into cloud workflows and storage to support monitoring and analytics-driven decision workflows.
@@ -272,108 +450,37 @@
           <div class="chips">
             <span class="chip">IBM Watson</span><span class="chip">Node-RED</span><span class="chip">Cloudant DB</span><span class="chip">Python</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="workflow">
-      <h2>ML workflow</h2>
-      <p>A consistent pipeline I use to move from raw data to a reproducible baseline.</p>
-
-      <div class="flow">
-        <div class="step">
-          <div class="n">Step 1</div>
-          <div class="t">Data ingestion</div>
-          <div class="d">Collect/organize datasets and define schema + naming conventions.</div>
-        </div>
-        <div class="step">
-          <div class="n">Step 2</div>
-          <div class="t">Preprocessing</div>
-          <div class="d">Cleaning, filtering, normalization, and handling missing/outliers.</div>
-        </div>
-        <div class="step">
-          <div class="n">Step 3</div>
-          <div class="t">Feature engineering</div>
-          <div class="d">Extract features, build feature tables, and validate distributions.</div>
-        </div>
-        <div class="step">
-          <div class="n">Step 4</div>
-          <div class="t">Modeling</div>
-          <div class="d">Baseline models first, then iterate with controlled changes.</div>
-        </div>
-        <div class="step">
-          <div class="n">Step 5</div>
-          <div class="t">Reporting</div>
-          <div class="d">Save artifacts, plots, and run summaries for reproducibility.</div>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top:14px;">
-        <h3>Folder structure I follow</h3>
-        <p class="small">A simple structure that keeps experiments clean and repeatable.</p>
-        <div class="chips" style="margin-top:12px;">
-          <span class="chip">data/</span>
-          <span class="chip">notebooks/</span>
-          <span class="chip">src/</span>
-          <span class="chip">reports/</span>
-          <span class="chip">figures/</span>
-          <span class="chip">models/</span>
+          <div class="row">
+            <button class="btn" data-modal="iot">Details</button>
+            <span class="pill">Data systems</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="research">
       <h2>Research</h2>
-      <p>Current focus: cuffless blood pressure estimation using PPG signals.</p>
+      <p>Current focus: cuffless BP estimation using PPG signals.</p>
 
       <div class="grid cols2" style="margin-top:14px;">
         <div class="card">
-          <h3>Current work</h3>
+          <h3>What I’m building</h3>
           <ul class="list">
-            <li>Dataset preparation: segmentation, filtering, normalization</li>
-            <li>Waveform morphology feature extraction and feature table creation</li>
+            <li>Segmentation + quality checks for physiological time-series</li>
+            <li>Waveform morphology feature extraction + feature table creation</li>
             <li>Feature selection experiments to identify informative predictors</li>
             <li>Baseline regression modeling and iterative improvement cycles</li>
-            <li>Reproducible notebooks and scripts with version control</li>
+            <li>Clean experiment organization for review and repeatability</li>
           </ul>
         </div>
-
         <div class="card">
-          <h3>Research timeline</h3>
-          <div class="timeline">
-            <div class="tl">
-              <div class="dot"></div>
-              <div>
-                <div class="when">Phase 1</div>
-                <div class="what">Data pipeline setup</div>
-                <div class="desc">Organize datasets, standardize segmentation, and validate signal quality.</div>
-              </div>
-            </div>
-            <div class="tl">
-              <div class="dot"></div>
-              <div>
-                <div class="when">Phase 2</div>
-                <div class="what">Feature extraction + selection</div>
-                <div class="desc">Extract morphology features and reduce to informative predictors.</div>
-              </div>
-            </div>
-            <div class="tl">
-              <div class="dot"></div>
-              <div>
-                <div class="when">Phase 3</div>
-                <div class="what">Baseline + iteration</div>
-                <div class="desc">Build baselines and iterate with controlled improvements.</div>
-              </div>
-            </div>
-            <div class="tl">
-              <div class="dot"></div>
-              <div>
-                <div class="when">Phase 4</div>
-                <div class="what">Packaging</div>
-                <div class="desc">Consolidate reports, visuals, and documentation for sharing.</div>
-              </div>
-            </div>
-          </div>
+          <h3>What I care about</h3>
+          <ul class="list">
+            <li>Data quality issues and robustness across subjects</li>
+            <li>Interpretable features and controlled experimentation</li>
+            <li>Clear reporting and reproducible artifacts</li>
+            <li>Practical constraints for deployment readiness</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -389,9 +496,9 @@
             <span class="chip">Feature engineering</span>
             <span class="chip">Feature selection</span>
             <span class="chip">Cross-validation</span>
-            <span class="chip">Time-series analysis</span>
+            <span class="chip">Error analysis</span>
+            <span class="chip">Time-series</span>
             <span class="chip">Signal preprocessing</span>
-            <span class="chip">Experiment tracking</span>
           </div>
         </div>
         <div class="card">
@@ -406,16 +513,16 @@
 
       <div class="grid cols2" style="margin-top:14px;">
         <div class="card">
-          <h3>Collaboration</h3>
+          <h3>Engineering practices</h3>
           <div class="chips">
-            <span class="chip">Documentation</span>
-            <span class="chip">Research communication</span>
-            <span class="chip">Structured experimentation</span>
-            <span class="chip">Problem decomposition</span>
+            <span class="chip">Clean documentation</span>
+            <span class="chip">Structured outputs</span>
+            <span class="chip">Reproducible runs</span>
+            <span class="chip">Readable code</span>
           </div>
         </div>
         <div class="card">
-          <h3>Nice-to-have (learning)</h3>
+          <h3>Currently learning</h3>
           <div class="chips">
             <span class="chip">PyTorch</span>
             <span class="chip">TensorFlow</span>
@@ -447,22 +554,192 @@
 
     <section class="section" id="contact">
       <h2>Contact</h2>
+      <p>Fastest way: email.</p>
+
       <div class="card" style="margin-top:14px;">
-        <p class="small">
-          Email: <a href="https://mail.google.com/mail/?view=cm&to=potailkarthikashalini@gmail.com" target="_blank" rel="noreferrer noopener">potailkarthikashalini@gmail.com</a><br/>
-          LinkedIn: <a href="https://www.linkedin.com/in/karthika-shalini/" target="_blank" rel="noreferrer noopener">linkedin.com/in/karthika-shalini</a>
-        </p>
+        <div class="row">
+          <div>
+            <div class="meta" style="margin:0 0 6px;">Email</div>
+            <div style="font-weight:900;">potailkarthikashalini@gmail.com</div>
+          </div>
+          <button class="btn" id="copyEmail">Copy</button>
+          <a class="btn primary" href="https://mail.google.com/mail/?view=cm&to=potailkarthikashalini@gmail.com" target="_blank" rel="noreferrer noopener">Open Gmail</a>
+        </div>
+        <div class="divider"></div>
+        <div class="row" style="margin-top:14px;">
+          <div>
+            <div class="meta" style="margin:0 0 6px;">LinkedIn</div>
+            <div style="font-weight:900;">linkedin.com/in/karthika-shalini</div>
+          </div>
+          <a class="btn" href="https://www.linkedin.com/in/karthika-shalini/" target="_blank" rel="noreferrer noopener">Open LinkedIn</a>
+        </div>
       </div>
     </section>
 
     <div class="footer">
       <div>© <span id="y"></span> Karthika Shalini Potail</div>
-      <div class="small">Hosted on GitHub Pages</div>
+      <div class="small">GitHub Pages</div>
     </div>
   </div>
 
+  <!-- Details Modals -->
+  <div class="modalOverlay" id="overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modalTop">
+        <strong id="modalTitle">Details</strong>
+        <button class="close" id="closeModal">Close</button>
+      </div>
+      <div class="modalBody" id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Copied</div>
+
   <script>
+    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Toast
+    const toast = document.getElementById("toast");
+    let toastTimer = null;
+    function showToast(msg){
+      toast.textContent = msg;
+      toast.style.display = "block";
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.style.display = "none", 1400);
+    }
+
+    // Modal content
+    const modalContent = {
+      ppg: {
+        title: "Cuffless blood pressure estimation (PPG)",
+        blocks: [
+          { label: "Focus", value: "Time-series preprocessing, morphology feature extraction, and regression baselines for SBP/DBP estimation." },
+          { label: "Pipeline", value: "Segmentation → filtering/normalization → feature extraction → feature selection → baseline regressors → structured reporting." },
+          { label: "Outputs", value: "Saved feature tables, plots, run summaries, and iteration notes for consistent comparison." },
+          { label: "Next steps", value: "Stability improvements across subjects, robustness checks, and packaging for sharing." }
+        ]
+      },
+      cnn: {
+        title: "Face mask detection (CNN)",
+        blocks: [
+          { label: "Focus", value: "Image preprocessing, augmentation strategies, and CNN training/validation workflow." },
+          { label: "Workflow", value: "Dataset prep → augmentation → training runs → validation checks → organized artifacts." },
+          { label: "Outputs", value: "Training logs, confusion-matrix visuals (offline), and structured run folders." },
+          { label: "Next steps", value: "Architecture variants and deployment-friendly preprocessing." }
+        ]
+      },
+      ml: {
+        title: "Early disease prediction (ML)",
+        blocks: [
+          { label: "Focus", value: "Structured data preprocessing, EDA, feature engineering, and multi-model comparisons." },
+          { label: "Workflow", value: "Cleaning → EDA → feature engineering → model training → consistent evaluation scripts." },
+          { label: "Outputs", value: "EDA summaries, feature tables, and comparison reports for models." },
+          { label: "Next steps", value: "Feature refinement and better validation strategy." }
+        ]
+      },
+      iot: {
+        title: "Smart Farmer (IoT + cloud analytics)",
+        blocks: [
+          { label: "Focus", value: "IoT data integration, cloud database workflows, and analytics-driven monitoring." },
+          { label: "Workflow", value: "Device data → ingestion → storage → analysis scripts → monitoring dashboards (conceptual)." },
+          { label: "Outputs", value: "Data workflows, scripts, and documentation for the monitoring pipeline." },
+          { label: "Next steps", value: "Hardening data schemas and performance optimization." }
+        ]
+      },
+      contact: {
+        title: "Contact",
+        blocks: [
+          { label: "Email", value: "potailkarthikashalini@gmail.com" },
+          { label: "LinkedIn", value: "linkedin.com/in/karthika-shalini" },
+          { label: "Preferred", value: "Email for fastest response." },
+          { label: "Topics", value: "ML engineering roles, research collaboration, and project discussions." }
+        ]
+      }
+    };
+
+    // Modal helpers
+    const overlay = document.getElementById("overlay");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalBody = document.getElementById("modalBody");
+    const closeModalBtn = document.getElementById("closeModal");
+
+    function openModal(key){
+      const data = modalContent[key];
+      if(!data) return;
+
+      modalTitle.textContent = data.title;
+      modalBody.innerHTML = "";
+
+      const kv = document.createElement("div");
+      kv.className = "kv";
+
+      data.blocks.forEach(b => {
+        const k = document.createElement("div");
+        k.className = "k";
+        k.innerHTML = `<div class="label">${escapeHtml(b.label)}</div><div class="value">${escapeHtml(b.value)}</div>`;
+        kv.appendChild(k);
+      });
+
+      modalBody.appendChild(kv);
+
+      overlay.style.display = "flex";
+      overlay.setAttribute("aria-hidden", "false");
+
+      // focus close button for accessibility
+      closeModalBtn.focus();
+    }
+
+    function closeModal(){
+      overlay.style.display = "none";
+      overlay.setAttribute("aria-hidden", "true");
+    }
+
+    // Escape to close
+    window.addEventListener("keydown", (e) => {
+      if(e.key === "Escape" && overlay.style.display === "flex") closeModal();
+    });
+
+    // Click outside to close
+    overlay.addEventListener("click", (e) => {
+      if(e.target === overlay) closeModal();
+    });
+
+    closeModalBtn.addEventListener("click", closeModal);
+
+    // Details buttons
+    document.querySelectorAll("[data-modal]").forEach(btn => {
+      btn.addEventListener("click", () => openModal(btn.getAttribute("data-modal")));
+    });
+
+    // Contact button opens modal
+    document.getElementById("openContact").addEventListener("click", () => openModal("contact"));
+
+    // Copy email
+    document.getElementById("copyEmail").addEventListener("click", async () => {
+      try{
+        await navigator.clipboard.writeText("potailkarthikashalini@gmail.com");
+        showToast("Email copied");
+      }catch{
+        // fallback
+        const t = document.createElement("textarea");
+        t.value = "potailkarthikashalini@gmail.com";
+        document.body.appendChild(t);
+        t.select();
+        document.execCommand("copy");
+        document.body.removeChild(t);
+        showToast("Email copied");
+      }
+    });
+
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
   </script>
 </body>
 </html>
